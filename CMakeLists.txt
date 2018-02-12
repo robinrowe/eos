@@ -7,6 +7,7 @@ enable_testing()
 
 message("--- Building ${NAME} ${CMAKE_SYSTEM_NAME}:${CMAKE_HOST_SYSTEM_PROCESSOR} ---")
 
+# Windows build system by Robin.Rowe@CinePaint.org
 if(WIN32)
 	cmake_policy(SET CMP0054 OLD)
 	include(CMakeDownload/DownloadProject/DownloadProject.cmake)
@@ -16,6 +17,7 @@ if(WIN32)
 	include(CMakeDownload/BZip2.cmake)
 	include(CMakeDownload/Secp256k1.cmake)
 	include(CMakeDownload/GMP.cmake)
+	include(CMakeDownload/LLVM.cmake)
 	include(CMakeDownload/Binaryen.cmake)
 	include(CMakeDownload/OpenSSL.cmake)
 	include(CMakeDownload/TCL.cmake)

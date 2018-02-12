@@ -1,5 +1,7 @@
 add_subdirectory( fc )
+if(NOT WIN32)
 add_subdirectory( chainbase )
+endif()
 add_subdirectory( wasm-jit )
 add_subdirectory( egenesis )
 add_subdirectory( utilities )

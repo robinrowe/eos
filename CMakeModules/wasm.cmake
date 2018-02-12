@@ -54,7 +54,11 @@ if( NOT ("${WASM_CLANG}" STREQUAL "" OR "${WASM_LLC}" STREQUAL "" OR "${WASM_LLV
 endif()
 
 # TODO: Check if compiler is able to generate wasm32
-if( NOT ("${WASM_CLANG}" STREQUAL "" OR "${WASM_LLC}" STREQUAL "" OR "${WASM_LLVM_LINK}" STREQUAL "" OR NOT BINARYEN_BIN) )
+if( NOT ("${WASM_CLANG}" STREQUAL "" 
+	OR "${WASM_LLC}" STREQUAL "" 
+	OR "${WASM_LLVM_LINK}" STREQUAL "" 
+	OR NOT BINARYEN_BIN) 
+	OR WIN32 )
   set(WASM_TOOLCHAIN TRUE)
 endif()
 
