@@ -1,6 +1,27 @@
 # Defines EOS library target.
-project( EOS )
+set(NAME EOS)
+project(${NAME})
 cmake_minimum_required( VERSION 2.8.12 )
+
+enable_testing()
+
+message("--- Building ${NAME} ${CMAKE_SYSTEM_NAME}:${CMAKE_HOST_SYSTEM_PROCESSOR} ---")
+
+if(WIN32)
+	cmake_policy(SET CMP0054 OLD)
+	include(CMakeDownload/DownloadProject/DownloadProject.cmake)
+	include(CMakeDownload/LibUnistd.cmake)
+	include_directories(${UNISTD_INCLUDE_DIRS})
+	include(CMakeDownload/ZLIB.cmake)
+	include(CMakeDownload/BZip2.cmake)
+	include(CMakeDownload/Secp256k1.cmake)
+	include(CMakeDownload/GMP.cmake)
+	include(CMakeDownload/Binaryen.cmake)
+	include(CMakeDownload/OpenSSL.cmake)
+	include(CMakeDownload/TCL.cmake)
+# Build libbz2 and libicu before building Boost:
+	include(CMakeDownload/Boost.cmake)
+endif()
 
 enable_testing()
 
