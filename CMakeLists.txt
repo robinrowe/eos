@@ -4,8 +4,13 @@ project(${NAME})
 cmake_minimum_required( VERSION 2.8.12 )
 
 enable_testing()
-
-message("--- Building ${NAME} ${CMAKE_SYSTEM_NAME}:${CMAKE_HOST_SYSTEM_PROCESSOR} ---")
+if(WIN32)
+	set(CMAKE_GENERATOR_TOOLSET host=x64)
+endif()
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CXX_EXTENSIONS OFF)
+message("--- Building ${NAME} ${CMAKE_SYSTEM_NAME}:${CMAKE_HOST_SYSTEM_PROCESSOR}:${CMAKE_GENERATOR_TOOLSET} ---")
 
 # Windows build system by Robin.Rowe@CinePaint.org
 if(WIN32)
@@ -24,6 +29,7 @@ if(WIN32)
 # Build libbz2 and libicu before building Boost:
 	include(CMakeDownload/Boost.cmake)
 endif()
+#message( FATAL_ERROR "CMake explicitly stopped." )
 
 enable_testing()
 
