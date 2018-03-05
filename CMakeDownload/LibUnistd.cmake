@@ -1,6 +1,6 @@
 set(NAME "libunistd")
 project(${NAME})
-message("--- Building " ${NAME} " ---")
+message("*** Building " ${NAME} " ***")
 
 set(GIT_LIBUNISTD https://github.com/robinrowe/libunistd.git)
 set(GIT_BRANCH master)

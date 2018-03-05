@@ -4,7 +4,7 @@
 
 set(NAME "GMP")
 project(${NAME})
-message("--- Building ${NAME} ---")
+message("*** Building ${NAME} ***")
 
 set(PATH_PREFIX	"${CMAKE_BINARY_DIR}/${NAME}")
 set(TARBALL https://gmplib.org/download/gmp/gmp-6.1.2.tar.bz2)

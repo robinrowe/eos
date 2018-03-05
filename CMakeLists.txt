@@ -109,7 +109,7 @@ FIND_PACKAGE(Boost 1.64 REQUIRED COMPONENTS
     locale
     iostreams)
 
-if( WIN32 )
+if(WIN32 )
 
     message( STATUS "Configuring Eos on WIN32")
     set( DB_VERSION 60 )
@@ -128,7 +128,7 @@ if( WIN32 )
     set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} /DEBUG")
 
     # On windows tcl should be installed to the directory pointed by setenv.bat script
-    SET(TCL_INCLUDE_PATH $ENV{TCL_ROOT}/include)
+#    SET(TCL_INCLUDE_PATH $ENV{TCL_ROOT}/include)
     MESSAGE(STATUS "tcl INCLUDE PATH: ${TCL_INCLUDE_PATH}")
 
     FIND_PACKAGE(TCL)
@@ -203,14 +203,19 @@ if(WASM_TOOLCHAIN)
 else()
   message( FATAL_ERROR "No WASM compiler cound be found" )
 endif()
-
+message("*** Building installer ***")
 include(installer)
-
+message("*** Building libraries ***")
 add_subdirectory( libraries )
+message("*** Building plugins ***")
 add_subdirectory( plugins )
+message("*** Building programs ***")
 add_subdirectory( programs )
+message("*** Building scripts ***")
 add_subdirectory( scripts )
+message("*** Building tests ***")
 add_subdirectory( tests )
+message("*** Building tools ***")
 add_subdirectory( tools )
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/genesis.json ${CMAKE_CURRENT_BINARY_DIR}/genesis.json COPYONLY)

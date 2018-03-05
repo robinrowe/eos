@@ -4,7 +4,7 @@
 
 set(NAME "LLVM")
 project(${NAME})
-message("--- Building ${NAME} ---")
+message("*** Building ${NAME} ***")
 
 set(PATH_PREFIX	"${CMAKE_BINARY_DIR}/${NAME}")
 set(TARBALL http://releases.llvm.org/5.0.1/llvm-5.0.1.src.tar.xz)

@@ -23,8 +23,11 @@ include_directories(${WAVM_INCLUDE_DIR}/Runtime)
 add_library(Runtime STATIC ${Sources} ${PublicHeaders})
 
 # Find an installed build of LLVM
-find_package(LLVM 4.0 REQUIRED CONFIG)
-
+if(WIN32)
+	find_package(LLVM REQUIRED CONFIG)
+else()
+	find_package(LLVM 4.0 REQUIRED CONFIG)
+endif()
 # Include the LLVM headers
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})

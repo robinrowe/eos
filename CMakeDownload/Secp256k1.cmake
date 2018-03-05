@@ -4,7 +4,7 @@
 
 set(NAME "Secp256k1")
 project(${NAME})
-message("--- Building ${NAME} ---")
+message("*** Building ${NAME} ***")
 
 set(PATH_PREFIX	"${CMAKE_BINARY_DIR}/${NAME}")
 set(GIT_REPO https://github.com/bitcoin-core/secp256k1.git)

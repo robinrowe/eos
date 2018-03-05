@@ -1,5 +1,9 @@
 set(SOURCES main.cpp)
+if(WIN32)
+find_package(LLVM REQUIRED CONFIG)
+else()
 find_package(LLVM 4.0 REQUIRED CONFIG)
+endif()
 
 link_directories(${LLVM_LIBRARY_DIR})
 

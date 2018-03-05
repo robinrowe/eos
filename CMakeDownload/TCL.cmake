@@ -4,7 +4,7 @@
 
 set(NAME "TCL")
 project(${NAME})
-message("--- Building ${NAME} ---")
+message("*** Building ${NAME} ***")
 
 set(PATH_PREFIX	"${CMAKE_BINARY_DIR}/${NAME}")
 #set(TARBALL https://downloads.sourceforge.net/project/tcllib/tcllib/1.18/tcllib-1.18.zip)

@@ -1,6 +1,6 @@
 set(NAME "Boost")
 project(${NAME})
-message("--- Building " ${NAME} " ---")
+message("*** Building " ${NAME} " ***")
 
 set(GIT_PATH https://github.com/boostorg/boost.git)
 set(GIT_URL https://downloads.sourceforge.net/project/boost/boost/1.64.0/boost_1_64_0.zip)

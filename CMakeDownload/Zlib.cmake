@@ -1,7 +1,7 @@
 #ZLIB.cmake
 set(NAME "zlib")
 project(${NAME})
-message("--- Building " ${NAME} " ---")
+message("*** Building " ${NAME} " ***")
 
 set(PATH_ZLIB "${CMAKE_BINARY_DIR}/zlib")
 set(URL_ZLIB "http://zlib.net/zlib-1.2.11.tar.gz")
