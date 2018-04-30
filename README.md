@@ -1,5 +1,7 @@
 ## EOS.IO - The Most Powerful Infrastructure for Decentralized Applications
 
+Note: Robin Rowe's Windows port, under development...
+
 [![Build Status](https://travis-ci.org/EOSIO/eos.svg?branch=master)](https://travis-ci.org/EOSIO/eos)
 
 Welcome to the EOS.IO source code repository!  EOS.IO software enables developers to create and deploy
